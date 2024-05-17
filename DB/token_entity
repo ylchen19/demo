@@ -1,0 +1,13 @@
+-- auto-generated definition
+create table token_entity
+(
+    expired    bit             not null,
+    revoked    bit             not null,
+    id         bigint          not null
+        primary key,
+    user_id    bigint          null,
+    token      varchar(255)    null,
+    token_type enum ('BEARER') null,
+    constraint FKb1qudrv4v5lbo2useyi6iq6qb
+        foreign key (user_id) references user (id)
+);
